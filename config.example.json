@@ -1,0 +1,9 @@
+{
+  "mode": "file",
+  "exportPath": "",
+  "apiKey": "",
+  "http": {
+    "port": 3000,
+    "authToken": ""
+  }
+}
