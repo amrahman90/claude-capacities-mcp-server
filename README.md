@@ -114,7 +114,7 @@ bun dist/index.js --help
   "mcpServers": {
     "capacities": {
       "command": "bun",
-      "args": ["C:\\Users\\{userName}\\IdeaProjects\\capacities-mcp\\dist\\index.js"]
+      "args": ["C:\\Users\\{userName}\\{projectFolder}\\capacities-mcp\\dist\\index.js"]
     }
   }
 }

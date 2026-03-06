@@ -8,7 +8,7 @@ This guide shows you how to connect Claude Desktop to your Capacities knowledge 
 
 - [x] Claude Desktop installed ([download here](https://claude.ai/download))
 - [x] Capacities export ZIP file (e.g., `Capacities (2026-02-11 13-03-27).zip`)
-- [x] Capacities MCP Server built at `C:\Users\mahmu\IdeaProjects\capacities-mcp`
+- [x] Capacities MCP Server built at `C:\Users\{userName}\{projectFolder}\capacities-mcp`
 - [x] Bun installed
 
 ---
@@ -17,12 +17,12 @@ This guide shows you how to connect Claude Desktop to your Capacities knowledge 
 
 Edit `config.json` in the project root:
 
-**Location:** `C:\Users\mahmu\IdeaProjects\capacities-mcp\config.json`
+**Location:** `C:\Users\{userName}\{projectFolder}\capacities-mcp\config.json`
 
 ```json
 {
   "mode": "file",
-  "exportPath": "C:\\Users\\mahmu\\Downloads\\Capacities (2026-02-11 13-03-27).zip",
+  "exportPath": "C:\\Users\\{userName}\\Downloads\\Capacities (2026-02-11 13-03-27).zip",
   "apiKey": "",
   "http": {
     "port": 3000,
@@ -47,7 +47,7 @@ Claude Desktop stores its MCP configuration in a JSON file:
 
 **On Windows, the full path is:**
 ```
-C:\Users\mahmu\AppData\Roaming\Claude\claude_desktop_config.json
+C:\Users\{userName}\AppData\Roaming\Claude\claude_desktop_config.json
 ```
 
 ---
@@ -82,7 +82,7 @@ Copy this configuration into the file:
   "mcpServers": {
     "capacities": {
       "command": "bun",
-      "args": ["C:\\Users\\mahmu\\IdeaProjects\\capacities-mcp\\dist\\index.js"]
+      "args": ["C:\\Users\\{userName}\\{projectFolder}\\capacities-mcp\\dist\\index.js"]
     }
   }
 }
@@ -101,7 +101,7 @@ Copy this configuration into the file:
     },
     "capacities": {
       "command": "bun",
-      "args": ["C:\\Users\\mahmu\\IdeaProjects\\capacities-mcp\\dist\\index.js"]
+      "args": ["C:\\Users\\{userName}\\{projectFolder}\\capacities-mcp\\dist\\index.js"]
     }
   }
 }
@@ -145,7 +145,7 @@ In Claude Desktop, try these prompts:
 
 | Config File | Location | Purpose |
 |-------------|----------|---------|
-| `config.json` | `C:\Users\mahmu\IdeaProjects\capacities-mcp\config.json` | Server settings (mode, export path, API key) |
+| `config.json` | `C:\Users\{userName}\{projectFolder}\capacities-mcp\config.json` | Server settings (mode, export path, API key) |
 | `claude_desktop_config.json` | `%APPDATA%\Claude\claude_desktop_config.json` | Claude Desktop MCP server registration |
 
 ---
@@ -163,8 +163,8 @@ If not found, use the full path to bun:
 {
   "mcpServers": {
     "capacities": {
-      "command": "C:\\Users\\mahmu\\.bun\\bin\\bun.exe",
-      "args": ["C:\\Users\\mahmu\\IdeaProjects\\capacities-mcp\\dist\\index.js"]
+      "command": "C:\\Users\\{userName}\\.bun\\bin\\bun.exe",
+      "args": ["C:\\Users\\{userName}\\{projectFolder}\\capacities-mcp\\dist\\index.js"]
     }
   }
 }
@@ -173,21 +173,21 @@ If not found, use the full path to bun:
 **Check 2: Verify config.json exists and is valid**
 ```powershell
 # Check config.json exists
-Test-Path "C:\Users\mahmu\IdeaProjects\capacities-mcp\config.json"
+Test-Path "C:\Users\{userName}\{projectFolder}\capacities-mcp\config.json"
 
 # View config.json content
-Get-Content "C:\Users\mahmu\IdeaProjects\capacities-mcp\config.json"
+Get-Content "C:\Users\{userName}\{projectFolder}\capacities-mcp\config.json"
 ```
 
 **Check 3: Verify export path in config.json**
 ```powershell
 # Check export ZIP exists
-Test-Path "C:\Users\mahmu\Downloads\Capacities (2026-02-11 13-03-27).zip"
+Test-Path "C:\Users\{userName}\Downloads\Capacities (2026-02-11 13-03-27).zip"
 ```
 
 **Check 4: Test server manually**
 ```powershell
-cd C:\Users\mahmu\IdeaProjects\capacities-mcp
+cd C:\Users\{userName}\{projectFolder}\capacities-mcp
 bun dist\index.js --help
 ```
 
@@ -210,7 +210,7 @@ The server auto-creates `config.json` on first run. If you see this error:
 
 1. Run the server once manually to create the file:
    ```powershell
-   cd C:\Users\mahmu\IdeaProjects\capacities-mcp
+   cd C:\Users\{userName}\{projectFolder}\capacities-mcp
    bun dist\index.js --help
    ```
 
