@@ -51,7 +51,7 @@ For users without API access, use the exported ZIP file:
 ```json
 {
   "mode": "file",
-  "exportPath": "C:\\Users\\mahmu\\Downloads\\Capacities (2026-02-11 13-03-27).zip"
+  "exportPath": "C:\\Users\\{userName}\\Downloads\\Capacities (2026-02-11 13-03-27).zip"
 }
 ```
 
@@ -114,7 +114,7 @@ bun dist/index.js --help
   "mcpServers": {
     "capacities": {
       "command": "bun",
-      "args": ["C:\\Users\\mahmu\\IdeaProjects\\capacities-mcp\\dist\\index.js"]
+      "args": ["C:\\Users\\{userName}\\IdeaProjects\\capacities-mcp\\dist\\index.js"]
     }
   }
 }
@@ -144,7 +144,7 @@ Add to your MCP configuration:
   "mcpServers": {
     "capacities": {
       "command": "bun",
-      "args": ["C:\\Users\\mahmu\\IdeaProjects\\capacities-mcp\\dist\\index.js"]
+      "args": ["C:\\Users\\{userName}\\{projectFolder}\\capacities-mcp\\dist\\index.js"]
     }
   }
 }
